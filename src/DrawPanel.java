@@ -1,10 +1,11 @@
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Point;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.awt.Font;
 
@@ -18,6 +19,7 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
     private boolean operationFailed;
     private boolean gameWon = false;
     private Rectangle button;
+    private static final int TOLERANCE = 20; // Snap-on application
 
     public DrawPanel() {
         this.addMouseListener(this);
@@ -79,19 +81,28 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
         repaint();
     }
 
+    @Override
     public void mouseReleased(MouseEvent e) {
         if (selectedOrgan != null) {
-            for (OrganSlot slot : organSlots) {
-                if (slot.getRectangle().contains(selectedOrgan.getOrganHitBox().getLocation()) && !slot.isOccupied()) {
-                    selectedOrgan.setRectangleLocation((int) slot.getRectangle().getX(), (int) slot.getRectangle().getY());
-                    slot.setOccupied(true);
-                    selectedOrgan.setCorrect(true);
-                    break;
+            // Check if the part is placed near the correct slot
+            Rectangle2D slot = selectedOrgan.getOrganHitBox();
+            if (isNearSlot(selectedOrgan.getShape().getBounds2D(), slot)) {
+                // Center the part on the slot
+                double slotCenterX = slot.getCenterX() - selectedOrgan.getShape().getBounds2D().getWidth() / 2;
+                double slotCenterY = slot.getCenterY() - selectedOrgan.getShape().getBounds2D().getHeight() / 2;
+                selectedOrgan.setRectangleLocation((int) slotCenterX, (int) slotCenterY);
+            } else {
+                lives--;
+                operationFailed = true;
+                if (lives == 0) {
+                    JOptionPane.showMessageDialog(null, "Game Over!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "You touched the edge! Lives left: " + lives);
                 }
             }
-            selectedOrgan = null;
+            selectedOrgan= null;
+            repaint();
         }
-        repaint();
     }
 
     public void performOperation() {
@@ -103,6 +114,13 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
                 operationFailed = true;
             }
         }
+    }
+    private boolean isNearSlot(Rectangle2D partBounds, Rectangle2D slot) { //implements the snap-on feature
+        double centerX = partBounds.getCenterX();
+        double centerY = partBounds.getCenterY();
+        double slotCenterX = slot.getCenterX();
+        double slotCenterY = slot.getCenterY();
+        return Math.abs(centerX - slotCenterX) <= TOLERANCE && Math.abs(centerY - slotCenterY) <= TOLERANCE;
     }
 
     @Override
