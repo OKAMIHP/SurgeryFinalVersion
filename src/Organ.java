@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.IllegalFormatWidthException;
 // fix the shape-rectangle dilemma
 
 public class Organ {
@@ -82,6 +81,11 @@ public class Organ {
     public int getY()
     {
         return organHitBox.y;
+    }
+
+    public OrganSlot getSlot()
+    {
+        return organSlot;
     }
     public static ArrayList<Organ> buildOrgans() {
         Organ brain = new Organ(100, 50, "Resources/Brain.png", -50, 0);

@@ -25,7 +25,6 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
         organs = Organ.buildOrgans();
-        organSlots = OrganSlot.buildOrganSlots();
         button = new Rectangle(147, 100, 160, 26);
         this.addMouseListener(this);
         dragOffset = new Point();
@@ -86,7 +85,7 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
     public void mouseReleased(MouseEvent e) {
         if (selectedOrgan != null) {
             // Check if the part is placedv near the correct slot
-            Rectangle2D slot = selectedOrgan.getSlot();
+            Rectangle slot = selectedOrgan.getSlot().getRectangle();
             if (isNearSlot(selectedOrgan.getOrganHitBox().getBounds2D(), slot)) {
                 // Center the part on the slot
                 double slotCenterX = slot.getCenterX() - selectedOrgan.getOrganHitBox().getBounds().getWidth() / 2;
@@ -136,15 +135,10 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
             }
         }
 
-        public void mouseDragged (MouseEvent e){
-        }
-        public void mouseMoved (MouseEvent e){
-        }
-        public void mouseEntered (MouseEvent e){
-        }
-        public void mouseExited (MouseEvent e){
-        }
-        public void mouseClicked (MouseEvent e){
-        }
     }
+    public void mouseDragged (MouseEvent e){ }
+    public void mouseMoved (MouseEvent e){ }
+    public void mouseEntered (MouseEvent e){ }
+    public void mouseExited (MouseEvent e){ }
+    public void mouseClicked (MouseEvent e){ }
 }
