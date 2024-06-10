@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.IllegalFormatWidthException;
 // fix the shape-rectangle dilemma
 
 public class Organ {
@@ -14,13 +15,16 @@ public class Organ {
     private String imageFileName;
     private boolean highlight;
     private boolean correct;
+    private OrganSlot organSlot;
 
-    public Organ(int x, int y, String imageTitle)
+    public Organ(int x, int y, String imageTitle, int slotX, int slotY)
     {;
+        this.organSlot = new OrganSlot(slotX, slotY,image.getWidth(), image.getHeight());
         this.imageFileName = imageTitle;
         this.image = readImage();
         this.organHitBox = new Rectangle(x, y, image.getWidth(), image.getHeight());
         this.highlight = false;
+
     }
 
     public Organ() {
@@ -71,14 +75,22 @@ public class Organ {
             return null;
         }
     }
+    public int getX()
+    {
+        return organHitBox.x;
+    }
+    public int getY()
+    {
+        return organHitBox.y;
+    }
     public static ArrayList<Organ> buildOrgans() {
-        Organ brain = new Organ(100, 50, "Resources/Brain.png");
-        Organ foot = new Organ(100, 0, "Resources/Foot.png");
-        Organ hand = new Organ(100, 150, "Resources/Hand.png");
-        Organ heart = new Organ(100, 200, "Resources/Heart.png");
-        Organ kidney = new Organ(100, 100, "Resources/Kidney.png");
-        Organ lowerIntestine = new Organ(100,250, "Resources/LowerIntestine.png");
-        Organ rightArm = new Organ(100, 300, "Resources/RightArm.png");
+        Organ brain = new Organ(100, 50, "Resources/Brain.png", -50, 0);
+        Organ foot = new Organ(100, 0, "Resources/Foot.png", -100, 50);
+        Organ hand = new Organ(100, 150, "Resources/Hand.png", -150, 100);
+        Organ heart = new Organ(100, 200, "Resources/Heart.png", -200, 150);
+        Organ kidney = new Organ(100, 100, "Resources/Kidney.png", -250, 200);
+        Organ lowerIntestine = new Organ(100,250, "Resources/LowerIntestine.png", -300, 250);
+        Organ rightArm = new Organ(100, 300, "Resources/RightArm.png", -350, 300);
         ArrayList<Organ> Organs = new ArrayList<>();
         Organs.add(brain);
         Organs.add(foot);

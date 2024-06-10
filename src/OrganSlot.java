@@ -13,6 +13,14 @@ public class OrganSlot {
     public Rectangle getRectangle() {
         return rectangle;
     }
+    public int getX()
+    {
+        return rectangle.x;
+    }
+    public int getY()
+    {
+        return rectangle.y;
+    }
 
     public boolean isOccupied() {
         return occupied;
@@ -21,13 +29,8 @@ public class OrganSlot {
     public void setOccupied(boolean occupied) {
         this.occupied = occupied;
     }
-    public static ArrayList<OrganSlot> buildOrganSlots() {
-        ArrayList<OrganSlot> slots = new ArrayList<>();
-        // Placeholder implementation:
-        slots.add(new OrganSlot(300, 10, 50, 50));
-        slots.add(new OrganSlot(300, 70, 50, 50));
-        slots.add(new OrganSlot(300, 130, 50, 50));
-        // Add more slots as needed
-        return slots;
-    }
+
+// designateOrgan designates an organ (organ parameter) through
+// reoccuring conditionals that if organ's coordinates are near
+// an organSlot's coordinates, then
 }

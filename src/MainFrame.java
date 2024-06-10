@@ -8,7 +8,6 @@ public class MainFrame extends JFrame implements Runnable
     private Thread windowThread;
     public MainFrame(String display)
     {
-        super(display);
         int frameWidth = 500;
         int frameHeight = 500;
         p = new DrawPanel();

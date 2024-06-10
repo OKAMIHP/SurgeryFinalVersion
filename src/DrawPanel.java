@@ -30,6 +30,7 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
         this.addMouseListener(this);
         dragOffset = new Point();
     }
+
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         int x = 50;
@@ -84,22 +85,26 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     public void mouseReleased(MouseEvent e) {
         if (selectedOrgan != null) {
-            boolean placed = false;
-            for (Organ part : organs) {
-                if (part.getShape().contains(e.getPoint())) {
-                    if (part.matches(selectedOrgan)) {
-                        selectedOrgan.setPosition(part.getX(), part.getY());
-                        placed = true;
-                    }
-                    break;
-                }
-            }
-            if (!placed) {
+            // Check if the part is placedv near the correct slot
+            Rectangle2D slot = selectedOrgan.getSlot();
+            if (isNearSlot(selectedOrgan.getOrganHitBox().getBounds2D(), slot)) {
+                // Center the part on the slot
+                double slotCenterX = slot.getCenterX() - selectedOrgan.getOrganHitBox().getBounds().getWidth() / 2;
+                double slotCenterY = slot.getCenterY() - selectedOrgan.getOrganHitBox().getBounds2D().getHeight() / 2;
+                selectedOrgan.setRectangleLocation((int) slotCenterX, (int) slotCenterY);
+                selectedOrgan.setCorrect(true);
+            } else {
+                lives--;
                 operationFailed = true;
-                repaint();
+                if (lives == 0) {
+                    JOptionPane.showMessageDialog(null, "Game Over!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "You touched the edge! Lives left: " + lives);
+                }
             }
             selectedOrgan = null;
             repaint();
+            checkWinCondition();
         }
     }
 
@@ -114,10 +119,32 @@ public class DrawPanel extends JPanel implements MouseListener, MouseMotionListe
         }
     }
 
-    @Override
-    public void mouseDragged(MouseEvent e) { }
-    public void mouseMoved(MouseEvent e) { }
-    public void mouseEntered(MouseEvent e) { }
-    public void mouseExited(MouseEvent e) { }
-    public void mouseClicked(MouseEvent e) { }
+    private boolean isNearSlot(Rectangle2D partBounds, Rectangle2D slot) {
+        double centerX = partBounds.getCenterX();
+        double centerY = partBounds.getCenterY();
+        double slotCenterX = slot.getCenterX();
+        double slotCenterY = slot.getCenterY();
+        return Math.abs(centerX - slotCenterX) <= TOLERANCE && Math.abs(centerY - slotCenterY) <= TOLERANCE;
+    }
+
+    private void checkWinCondition() {
+        boolean allPlaced = true;
+        for (OrganSlot part : organSlots) {
+            if (!part.isOccupied()) {
+                allPlaced = false;
+                break;
+            }
+        }
+
+        public void mouseDragged (MouseEvent e){
+        }
+        public void mouseMoved (MouseEvent e){
+        }
+        public void mouseEntered (MouseEvent e){
+        }
+        public void mouseExited (MouseEvent e){
+        }
+        public void mouseClicked (MouseEvent e){
+        }
+    }
 }

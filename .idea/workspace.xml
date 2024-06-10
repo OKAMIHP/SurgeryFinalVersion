@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef894bba-f897-4633-ae11-45ec5ef7446c" name="Changes" comment="needs transfer of rectangles to shapes, subclasses and the stages">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Brain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Organ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Organ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrganSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrganSlot.java" afterDir="false" />
+    </list>
+    <list id="708c57d5-875d-4a15-b811-31202372288e" name="Changes by BT_3W2_12" comment="">
+      <change beforePath="$PROJECT_DIR$/src/OrganSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrganSlot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/OrganSlot.java">
+      <ranges>
+        <range start1="6" end1="6" start2="6" end2="7" changelist="708c57d5-875d-4a15-b811-31202372288e" />
+        <range start1="15" end1="15" start2="16" end2="24" changelist="ef894bba-f897-4633-ae11-45ec5ef7446c" />
+        <range start1="23" end1="32" start2="32" end2="36" changelist="ef894bba-f897-4633-ae11-45ec5ef7446c" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -36,22 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/haddr/IdeaProjects/Surgery Final Version/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/haddr/IdeaProjects/Surgery Final Version/src/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\haddr\IdeaProjects\Surgery Final Version\Resources" />
@@ -71,6 +88,7 @@
       <workItem from="1717982445310" duration="27000" />
       <workItem from="1717982575967" duration="6981000" />
       <workItem from="1718014162536" duration="317000" />
+      <workItem from="1718032505727" duration="2933000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit implemented all classes,awaiting subclass completion">
       <option name="closed" value="true" />
