@@ -15,9 +15,8 @@ public class Organ {
     private boolean highlight;
     private boolean correct;
 
-    public Organ(int x, int y, String imageTitle, Shape shape)
-    {
-        this.shape = shape;
+    public Organ(int x, int y, String imageTitle)
+    {;
         this.imageFileName = imageTitle;
         this.image = readImage();
         this.organHitBox = new Rectangle(x, y, image.getWidth(), image.getHeight());
@@ -73,17 +72,21 @@ public class Organ {
         }
     }
     public static ArrayList<Organ> buildOrgans() {
-        Brain brain = new Brain(100, 100);
-        Foot foot = new Foot(0, 0);
-
+        Organ brain = new Organ(100, 50, "Resources/Brain.png");
+        Organ foot = new Organ(100, 0, "Resources/Foot.png");
+        Organ hand = new Organ(100, 150, "Resources/Hand.png");
+        Organ heart = new Organ(100, 200, "Resources/Heart.png");
+        Organ kidney = new Organ(100, 100, "Resources/Kidney.png");
+        Organ lowerIntestine = new Organ(100,250, "Resources/LowerIntestine.png");
+        Organ rightArm = new Organ(100, 300, "Resources/RightArm.png");
         ArrayList<Organ> Organs = new ArrayList<>();
         Organs.add(brain);
         Organs.add(foot);
-        Organs.add(Hand);
-        Organs.add(Heart);
-        Organs.add(Kidney);
-        Organs.add(LowerIntestine);
-        Organs.add(RightArm);
+        Organs.add(hand);
+        Organs.add(heart);
+        Organs.add(kidney);
+        Organs.add(lowerIntestine);
+        Organs.add(rightArm);
         return Organs;
     }
 
