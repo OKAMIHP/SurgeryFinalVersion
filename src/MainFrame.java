@@ -1,34 +1,29 @@
+// MainFrame.java
 import javax.swing.JFrame;
-import javax.swing.*;
-import java.awt.*;
 
-public class MainFrame extends JFrame implements Runnable
-{
+public class MainFrame extends JFrame implements Runnable {
     private DrawPanel p;
     private Thread windowThread;
-    public MainFrame(String display)
-    {
-        int frameWidth = 500;
-        int frameHeight = 500;
+
+    public MainFrame(String display) {
+        int frameWidth = 1920;
+        int frameHeight = 1080;
         p = new DrawPanel();
         this.add(p);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(frameWidth, frameHeight);
-        this.setLocation(600,100);
+        this.setLocation(0, 0);
         this.setVisible(true);
         startThread();
     }
 
-    public void startThread()
-    {
+    public void startThread() {
         windowThread = new Thread(this);
         windowThread.start();
     }
 
-    public void run()
-    {
-        while(true)
-        {
+    public void run() {
+        while (true) {
             p.repaint();
         }
     }

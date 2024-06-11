@@ -5,13 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef894bba-f897-4633-ae11-45ec5ef7446c" name="Changes" comment="NO MORE SUBCLASSES, FIXED ORGANS, ADDEd ORGAN SLOT TO ORGAN">
+      <change afterPath="$PROJECT_DIR$/Resources/ArmSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/BrainSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/Dead.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/FootSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/HeartSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/KidneySlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/LegSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/LowerIntestineSlot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Resources/RightArmSlot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Brain.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Brain.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Foot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Foot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Hand.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Hand.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Heart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/Kidney.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/Kidney.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/LowerIntestine.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/LowerIntestine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/RightArm.png" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/RightArm.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Organ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Organ.java" afterDir="false" />
-    </list>
-    <list id="708c57d5-875d-4a15-b811-31202372288e" name="Changes by BT_3W2_12" comment="">
       <change beforePath="$PROJECT_DIR$/src/OrganSlot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrganSlot.java" afterDir="false" />
     </list>
+    <list id="708c57d5-875d-4a15-b811-31202372288e" name="Changes by BT_3W2_12" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -58,6 +76,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\haddr\IdeaProjects\SurgeryFinalVersion\Resources" />
       <recent name="C:\Users\haddr\IdeaProjects\Surgery Final Version\Resources" />
     </key>
   </component>
@@ -76,6 +95,7 @@
       <workItem from="1717982575967" duration="6981000" />
       <workItem from="1718014162536" duration="317000" />
       <workItem from="1718032505727" duration="4125000" />
+      <workItem from="1718055173362" duration="15218000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit implemented all classes,awaiting subclass completion">
       <option name="closed" value="true" />
@@ -129,7 +149,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>4</line>
+          <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
